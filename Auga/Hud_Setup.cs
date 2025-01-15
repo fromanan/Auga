@@ -159,6 +159,7 @@ namespace Auga
                     tabContainer.Find("Furniture").gameObject,
                 };
                 Localization.instance.Localize(tabContainer);
+            }
 
             __instance.m_pieceSelectionWindow.transform.Replace("Darken", Auga.Assets.BuildHud);
             
@@ -193,12 +194,13 @@ namespace Auga
 
                 var image = selectedField.GetComponent<Image>();
                 image.color = new Color(image.color.r, image.color.g, image.color.b, 0.0f);
-
             }
-            
-            var iconMaterial = __instance.m_pieceIconPrefab.transform.Find("icon").GetComponent<Image>().material;
-            Auga.Assets.BuildHudElement.transform.Find("icon").GetComponent<Image>().material = iconMaterial;
-            __instance.m_pieceIconPrefab = Auga.Assets.BuildHudElement;
+
+            {
+                var iconMaterial = __instance.m_pieceIconPrefab.transform.Find("icon").GetComponent<Image>().material;
+                Auga.Assets.BuildHudElement.transform.Find("icon").GetComponent<Image>().material = iconMaterial;
+                __instance.m_pieceIconPrefab = Auga.Assets.BuildHudElement;
+            }
 
             var pieceRoot = __instance.m_pieceSelectionWindow.transform.Find("PieceList/Root").gameObject;
             pieceRoot.RectTransform().localPosition = new Vector3(pieceRoot.RectTransform().localPosition.x+3, pieceRoot.RectTransform().localPosition.y-3, pieceRoot.RectTransform().localPosition.z);
