@@ -127,7 +127,7 @@ namespace Auga
             minimap.m_selectedIcons[Minimap.PinType.Icon3] = minimap.m_selectedIcon3;
             minimap.m_selectedIcons[Minimap.PinType.Icon4] = minimap.m_selectedIcon4;
             minimap.SelectIcon(Minimap.PinType.Icon0);
-            minimap.m_nameInput = newMap.Find("NameField").GetComponent<GuiInputField>();
+            minimap.m_nameInput = newMap.Find("NameField").GetComponent<GUIFramework.GuiInputField>();
 
             minimap.m_sharedMapHint = newMap.Find("SharedPanel").gameObject;
             minimap.m_hints = new List<GameObject> { newMap.Find("PingPanel").gameObject };
