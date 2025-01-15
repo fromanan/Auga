@@ -353,7 +353,6 @@ namespace Auga
     [HarmonyPatch(typeof(Hud), nameof(Hud.SetupPieceInfo))]
     public static class Hud_SetupPieceInfo_Patch
     {
-
         public static void SetupPieceInfo(Hud instance, Piece piece)
         {
                 if (piece == null)
@@ -419,7 +418,6 @@ namespace Auga
                         component3.color = Mathf.Sin(Time.time * 10f) > 0.0 ? Color.red : Color.white;
                     }
                 }
-
         }
         
         [UsedImplicitly]
@@ -454,8 +452,6 @@ namespace Auga
                 }
             }
         }
-
-        
         
         public static void Postfix(Hud __instance, Piece piece)
         {
